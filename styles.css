@@ -1,0 +1,101 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #fbe6d3;
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+  font-size: 5vw;
+  top: 20%;
+  left: 50%;
+  margin: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: relative;
+  font-weight: 900;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+}
+.wrapper h1 {
+  color: #fbe6d3;
+  text-transform: uppercase;
+  width: 700px;
+  text-align: center;
+  text-shadow: -1px -1px 0 #3e2e6a, 1px -1px 0 #3e2e6a, -1px 1px 0 #3e2e6a, 1px 1px 0 #3e2e6a;
+}
+.wrapper h1:after {
+  content: attr(data-heading);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  overflow: hidden;
+  color: #f3576c;
+  -webkit-transform: translate(0.4vw, 0.3vh);
+          transform: translate(0.4vw, 0.3vh);
+  mix-blend-mode: darken;
+  text-align: center;
+  width: 100%;
+  text-shadow: 1px 0px 0px #3e2e6a, 0px 1px 0px #130b52, 2px 1px 0px #3e2e6a, 1px 2px 0px #130b52, 3px 2px 0px #3e2e6a, 2px 3px 0px #130b52, 4px 3px 0px #3e2e6a, 3px 4px 0px #130b52, 5px 4px 0px #3e2e6a, 4px 5px 0px #130b52, 6px 5px 0px #3e2e6a, 5px 6px 0px #130b52, 7px 6px 0px #3e2e6a;
+}
+
+#app {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+.select {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.marker {
+  position: absolute;
+  width: 60px;
+  left: 220px;
+  top: -20px;
+  z-index: 2;
+}
+
+.wheel {
+  width: 500px;
+  height: 500px;
+}
+
+.button {
+  display: block;
+  width: 250px;
+  margin: 40px auto;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.blur {
+  animation: blur 5s;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(1.5px);
+  }
+  80% {
+    filter: blur(1.5px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
