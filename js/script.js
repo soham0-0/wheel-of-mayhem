@@ -2,7 +2,7 @@
   let color    = ['#ca7','#7ac','#77c'];
   let label = [];
   let slices   = label.length;
-  let sliceDeg = 360/slices, px=30; // px => font size
+  let sliceDeg = 360, px=30; // px => font size
   let deg      = 0;
   let modd   = (slices%2)?(3):(2);
   let ctx    = canvas.getContext('2d');
@@ -18,7 +18,7 @@
     ctx.lineTo(center, center);
     ctx.fill();
   }
-
+  drawSlice(deg, color[0]);
   function drawText(deg, text) {
     ctx.save();
     ctx.translate(center, center);
@@ -32,7 +32,7 @@
   const add = document.querySelector('.button');
   add.addEventListener('click', () =>{
     let option = prompt("Enter option:", "eg. stuff");
-    label.push(option);
+    -label.push(option);
     slices   = label.length;
     sliceDeg = 360/slices, px=30; // px => font size
     deg      = 0;
