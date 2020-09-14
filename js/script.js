@@ -1,6 +1,6 @@
 (function() {
   let color    = ['#ca7','#7ac','#77c'];
-  let label = ['stuff0', 'stuff1', 'stuff2', 'stuff3', 'stuff4', 'stuff5'];
+  let label = [];
   let slices   = label.length;
   let sliceDeg = 360/slices, px=30; // px => font size
   let deg      = 0;
@@ -29,12 +29,23 @@
     ctx.fillText(text, 220, 5);
     ctx.restore();
   }
-
-  for(let i=0; i<slices; i++){
-    drawSlice(deg, color[i%modd]);
-    drawText(deg+sliceDeg/2, label[i]);
-    deg += sliceDeg;
-  }
+  const add = document.querySelector('.button');
+  add.addEventListener('click', () =>{
+    let option = prompt("Enter option:", "eg. stuff");
+    label.push(option);
+    slices   = label.length;
+    sliceDeg = 360/slices, px=30; // px => font size
+    deg      = 0;
+    modd   = (slices%2)?(3):(2);
+    ctx    = canvas.getContext('2d');
+    width  = canvas.width; // size
+    center = width/2;      // center
+    for(let i=0; i<slices; i++){
+      drawSlice(deg, color[i%modd]);
+      drawText(deg+sliceDeg/2, label[i]);
+      deg += sliceDeg;
+    }
+  });
   const wheel = document.querySelector('.wheel');
   const startButton = document.querySelector('.wheel');
   wheel.style.transform = `rotate(${-90}deg)`
@@ -43,7 +54,7 @@
     startButton.style.pointerEvents = 'none';
     deg = Math.floor(5000 + Math.random()*5000);
     wheel.style.transition = 'all 5s ease-out';
-    wheel.style.transform = `rotate(${deg}deg)`;
+    wheel.style.transform = `rotate(${-1*deg}deg)`;
     wheel.classList.add('blur');
   });
 
@@ -52,10 +63,10 @@
     wheel.classList.remove('blur');
     startButton.style.pointerEvents = 'auto';
     wheel.style.transition = 'none';
-    const actualDeg = deg % 360;
-    wheel.style.transform = `rotate(${actualDeg}deg)`;
-    console.log(slices-Math.floor((actualDeg+90)/(360/slices)));
-    let selection = label[slices-Math.floor((actualDeg+90)/(360/slices))-1];
+    let actualDeg = deg % 360;
+    wheel.style.transform = `rotate(${-1*actualDeg}deg)`;
+    actualDeg = (actualDeg-90>0)?actualDeg-90:actualDeg+270;
+    let selection = label[Math.floor((actualDeg)/(360/slices))];
     document.getElementById('text').innerHTML = selection;
     elem.setAttribute("data-heading", selection);
   });
