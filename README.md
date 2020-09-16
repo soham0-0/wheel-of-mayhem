@@ -1,7 +1,7 @@
 # 🎰 wheel-of-mayhem 🎰
 *It's a little something I made to play games in video calls Xd*
 ***
-### A spinning wheel which selects one of the options at random and presents in beautiful text.
+### A spinning wheel which selects one of the options at random and presents it in beautiful text.
 ---
 ## How to Play:
 
