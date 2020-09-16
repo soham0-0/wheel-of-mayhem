@@ -1,5 +1,5 @@
 (function() {
-  let color    = ['#ca7','#7ac','#77c'];
+  let color    = ['#998bb0','#766691','#554670'];
   let label = [];
   let slices   = label.length;
   let sliceDeg = 360, px=30; // px => font size
