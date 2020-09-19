@@ -32,7 +32,7 @@
   const add = document.querySelector('.button');
   add.addEventListener('click', () =>{
     let option = prompt("Enter option:", "eg. stuff");
-    -label.push(option);
+    if(option) label.push(option);
     slices   = label.length;
     sliceDeg = 360/slices, px=30; // px => font size
     deg      = 0;
@@ -67,6 +67,7 @@
     wheel.style.transform = `rotate(${-1*actualDeg}deg)`;
     actualDeg = (actualDeg-90>0)?actualDeg-90:actualDeg+270;
     let selection = label[Math.floor((actualDeg)/(360/slices))];
+    if(!selection) selection = "Empty!!";
     document.getElementById('text').innerHTML = selection;
     elem.setAttribute("data-heading", selection);
   });
