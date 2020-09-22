@@ -5,8 +5,8 @@
 ---
 ## How to Play:
 
-Step 1: open https://soham0-0.github.io/wheel-of-mayhem</br>
-Step 2: click on the (+) icon to add options</br>
+Step 1: Open the [link](https://soham0-0.github.io/wheel-of-mayhem).</br>
+Step 2: Click on the (+) icon to add options</br>
 Step 3: Click anywhere on the wheel to spin!
 
 
